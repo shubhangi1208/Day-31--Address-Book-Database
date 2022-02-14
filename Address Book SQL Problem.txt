@@ -1,0 +1,31 @@
+UC1:-1) create database Address_BookService;
+     2)  use Address_BookService;
+
+UC2:-create Table Address_Book (firstname varchar(20),lastname varchar(20),address varchar(50),city varchar(20),state varchar(30),zip varchar(6),phone varchar(12),email varchar(50));
+
+UC3:-1) insert into Address_Book values('shubhangi','topale','pune','pune','Maharashtra','410207','9096067476','ashubhangi1996@gmail.com');
+     2) insert into Address_Book values('shivani','Amilkanthwar','panbhoshi','Nanded','Maharashtra','410207','9325340898','ashivani1998@gmail.com');
+     3) insert into Address_Book values('Krishna','Amilkanthwar','Nanded','Nanded','Maharashtra','410205','9096067578','krishna@gmail.com');
+
+UC4:- UPDATE Address_Book SET address= 'wagholi' where firstname = 'shubhangi';
+
+UC5:-DELETE FROM Address_Book Where firstname = 'shivani';
+
+UC6:-1) Select * from Address_Book where city = 'Nanded';
+     2)Select * from Address_Book where state='Maharashtra';
+
+UC7:-1) SELECT COUNT(firstname) from Address_Book where city = 'Nanded';
+     2) SELECT COUNT(firstname) from Address_Book where state = 'Maharashtra';
+
+UC8:- SELECT firstname FROM Address_Book where city = 'Nanded' ORDER BY firstname;
+
+UC9:- 1) alter table Address_Book add column bookname varchar(30), add column booktype varchar(30);
+      2) update Address_Book set bookname='MyBook1' where firstname = 'shubhangi';
+      3) update Address_Book set bookname='MyBook2' where firstname = 'shivani';
+      4) update Address_Book set bookname='MyBook3' where firstname = 'Krishna';
+
+      5)update Address_Book set booktype='Family' where firstname = 'shubhangi';
+      6)update Address_Book set booktype='Friends' where firstname = 'shivani';
+      7)update Address_Book set booktype='Profession' where firstname = 'Krishna';
+
+UC10:- select booktype,count(*) from Address_Book group by booktype;
